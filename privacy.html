@@ -149,13 +149,17 @@
         <ul>
             <li><strong>Sign in with Apple：</strong>Apple 的隐私保护登录服务。</li>
             <li><strong>Apple iCloud / CloudKit。</strong>用于个人曲谱和曲库整理数据的私有同步。</li>
-            <li><strong>腾讯云。</strong>腾讯云对象存储（COS）用于存放您主动分享的曲谱副本。腾讯云服务器用于接收可选使用统计，统计备份存放在独立的私有 COS 存储中。</li>
+            <li><strong>腾讯云。</strong>腾讯云对象存储（COS）用于存放您主动分享的曲谱副本。腾讯云服务器用于接收可选使用统计，以及验证和保存您主动提交的账号注销请求。两者使用独立的服务与存储目录。统计备份存放在独立的私有 COS 存储中。</li>
             <li><strong>Apple App Store：</strong>用于处理应用内购买，Apple 的隐私政策适用。</li>
         </ul>
 
         <h2>5. 数据保留与删除</h2>
-        <p>您可在 App 的设置中删除此设备上的 TideTone 账户信息、该账户的本地曲谱和课程进度。此操作不会自动删除 iCloud 私有数据库中的记录或已上传的分享副本。如需请求删除云端数据，请通过下方邮箱联系我们。使用统计的保留与删除见<a href="#usage-analytics">可选的使用统计</a>。</p>
-        <p lang="en">You can use Settings in the app to remove your TideTone account information, locally stored scores, and course progress for that account from this device. This action does not automatically delete records in your private iCloud database or shared copies already uploaded. To request deletion of cloud data, use the contact email below. For analytics retention and deletion, see <a href="#usage-analytics-en">Optional usage analytics</a>.</p>
+        <p>在支持账号注销申请的版本中，您可从设置页重新验证当前的 Apple 登录身份，提交注销请求并查看处理进度。提交申请本身不会立即删除曲谱。历史分享归属或旧设备回传风险尚未核实的请求会显示“待处理”，不会显示注销完成。目前注销服务仅接收申请和提供进度查询，自动清理尚未启用。旧版本的本机清理不会自动删除 iCloud 记录或已上传的分享副本；相关请求也可通过下方邮箱联系我们。</p>
+        <p>为验证和继续处理申请，服务器临时处理 Apple 身份凭证，不将原始凭证、姓名或邮箱写入注销记录。服务器保存由账号标识生成的专用带密钥摘要、请求编号、申请时间和处理状态；这些记录可通过再次身份验证关联到您的请求，属于账号处理资料，不属于匿名使用统计。短期验证信息和会话会到期失效并清理。注销处理记录及其独立私有本机备份目前没有固定的自动删除期限；在实际启用清理前，我们会补充必要回执和防回传记录的保留说明。该处理不改变使用统计的保留规则。</p>
+        <p>后续执行清理时，仅处理已核实属于此账号的数据，不清空整个 iCloud、不删除游客或其他账号的数据。处理完成后仍可能需要您按页面指引检查 Apple 登录授权。注销不会自动取消 App Store 订阅，您可通过页面中的订阅管理入口另行管理。使用统计的保留与删除见<a href="#usage-analytics">可选的使用统计</a>。</p>
+        <p lang="en">In versions supporting account-deletion requests, you can verify your current Sign in with Apple identity in Settings, submit a request, and check its status. Submitting a request does not immediately delete scores. Requests with unresolved historical-share ownership or older-device upload risks remain pending and are not reported as completed. The service currently accepts requests and provides status only; automatic cleanup is not enabled. Local cleanup in older versions does not automatically delete private iCloud records or uploaded shared copies. You can also contact the email below.</p>
+        <p lang="en">To verify and resume a request, the server temporarily processes Apple identity credentials without storing the original credentials, your name, or email in deletion records. It stores a dedicated keyed digest of the account identifier, a request ID, submission time, and processing status. These records can be linked to your request after renewed identity verification and are account-processing data, not anonymous usage analytics. Short-lived verification and session records expire and are cleared. Deletion records and their separate private local backups currently have no fixed automatic deletion period. Before enabling actual cleanup, we will describe retention of necessary receipts and safeguards against data being uploaded again. This does not change analytics retention.</p>
+        <p lang="en">When cleanup becomes available, it will process only data whose ownership by this account has been verified, without clearing an entire iCloud database or deleting guest or other accounts' data. You may still need to review Apple sign-in access as directed. Account deletion does not automatically cancel App Store subscriptions; use the subscription-management link separately. For analytics retention and deletion, see <a href="#usage-analytics-en">Optional usage analytics</a>.</p>
 
         <h2>6. 儿童隐私</h2>
         <p>TideTone 不针对 13 岁以下儿童。我们不会故意收集 13 岁以下儿童的个人信息。</p>
